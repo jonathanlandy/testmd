@@ -1,7 +1,7 @@
 # `linselect` 
 
 *Efficient linear stepwise regression* -- a fast, flexible, and performant
-feature selection algorithm for python.
+feature selection package for python.
 
 
 ## Package in a nutshell 
