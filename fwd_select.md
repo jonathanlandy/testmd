@@ -28,12 +28,14 @@ The feature ordering and CODs are stored, allowing for review.
     `cod_list`.
 
 #### `fit(self, X, y)`
+
 Method fits passed data, evaluates `self.ordered_feature_list` and
 `self.cod_list`.
   
 *Parameters*
 
  * `X : np.array (n_examples, n_features)`
+
     Data array of features containing samples across all features.  Must be
     numeric.
   
