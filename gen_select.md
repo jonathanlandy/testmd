@@ -8,14 +8,14 @@ desired.
 
 ## Special Attributes
 #### `best_results: dict`
-Keys of this dict correspond to feature subset size.  The value for a given key
-is also a dict -- one characterizing the best subset seen so far of this size.
-These inner dicts have two keys, `s` and `cod`.  The first holds a Boolean array
-specifying which features were included in the subset and the second holds the
-corresponding COD.
+  Keys of this dict correspond to feature subset size.  The value for a given key
+  is also a dict -- one characterizing the best subset seen so far of this size.
+  These inner dicts have two keys, `s` and `cod`.  The first holds a Boolean array
+  specifying which features were included in the subset and the second holds the
+  corresponding COD.
 
 ## Methods
-#### `__init__(dtype=np.float32)`
+#### `__init__(self, dtype=np.float32)`
   *Parameters*
 
   * `dtype`: numeric variable type
@@ -33,31 +33,31 @@ Set the operating conditions of the stepwise search.
   
  *  `X: np.array, (n_examples, n_features)`
 
- The data set to be fit.  This must be passed in the first call to this
- method, but should not need to be passed again in any following repositioning
- call.  Must be numeric.
+    The data set to be fit.  This must be passed in the first call to this
+    method, but should not need to be passed again in any following repositioning
+    call.  Must be numeric.
 
  *  `s: np.array, (n_features)`
 
- This is a Boolean array that specifies which predictor set to use when we
- begin (or continue) our search.  If the index `i` is set to `True`, the
- corresponding feature `i` will be included in the initial predictor set.
+    This is a Boolean array that specifies which predictor set to use when we
+    begin (or continue) our search.  If the index `i` is set to `True`, the
+    corresponding feature `i` will be included in the initial predictor set.
 
  *  `mobile: np.array, (n_features)`
 
- This is a Boolean array that specifies which of the features are locked into
- or out of our fit -- if the index `i` is set to `True`, the corresponding
- feature `i` can be moved into or out of the predictor set.  Otherwise, the
- feature `i` is locked in the set specified by the passed `s` argument.
+    This is a Boolean array that specifies which of the features are locked into
+    or out of our fit -- if the index `i` is set to `True`, the corresponding
+    feature `i` can be moved into or out of the predictor set.  Otherwise, the
+    feature `i` is locked in the set specified by the passed `s` argument.
 
 
  * `targets: np.array, (n_features)`
 
- This is a Boolean array that specifies which of the columns of `X` are to be
- fit -- analogs of `y` in the `FwdSelect` and `RevSelect` algorithms.  If the
- index `i` is set to `True`, the corresponding column `i` will be placed in the
- target set.  Once set, this should not be passed again in any following
- repositioning call.
+    This is a Boolean array that specifies which of the columns of `X` are to be
+    fit -- analogs of `y` in the `FwdSelect` and `RevSelect` algorithms.  If the
+    index `i` is set to `True`, the corresponding column `i` will be placed in the
+    target set.  Once set, this should not be passed again in any following
+    repositioning call.
 
 #### `search(self, protocol=(2,1), steps=1)`
 
@@ -80,7 +80,7 @@ Set the operating conditions of the stepwise search.
     taken.  This can happen, e.g., when requesting a forward step, but
     all mobile features are already in the predictor set `s`.
 
-#### `forward_cods()`
+#### `forward_cods(self)`
 
 Returns the COD increase that would result from each possible movement of an
 element outside of the predictor set inside.
@@ -89,11 +89,12 @@ element outside of the predictor set inside.
 
   * `cod_gains : np.array (self.dimension, )`
 
- This array's index `i` specifies the gain in target COD that would result if
- feature `i` were to move into `s`.  Values corresponding to unavailable moves
- are set to 0.
+    This array's index `i` specifies the gain in target COD that would result if
+    feature `i` were to move into `s`.  Values corresponding to unavailable moves
+    are set to 0.
 
-#### `reverse_cods()`
+#### `reverse_cods(self)`
+
 Returns the COD decrease that would result from each possible movement of an
 element inside of the predictor set outside.
 
@@ -102,9 +103,9 @@ element inside of the predictor set outside.
   * `cod_costs : np.array (self.dimension, )`
 
 
- This array's index `i` specifies the drop in target COD that would result if
- feature `i` were to move outside of `s`.  Values corresponding to unavailable
- moves are set to 0.
+    This array's index `i` specifies the drop in target COD that would result if
+    feature `i` were to move outside of `s`.  Values corresponding to unavailable
+    moves are set to 0.
 
 ## Supervised example
 The code below carries out a forward and a reverse sweep on a random,
@@ -141,12 +142,12 @@ selector.position(X, s=s, targets=targets, mobile=mobile)
 # Take a forward sweep and print best K feature model found
 selector.search(protocol=(1, 0), steps=N-1)
 print selector.best_results[K]
->> {'s': array([False,  True,  True,  True, False], dtype=bool), 'cod': 0.912}
+# {'s': array([False,  True,  True,  True, False], dtype=bool), 'cod': 0.912}
 
 # Continue search with a reverse sweep
 selector.search(protocol=(0, 1), steps=N-1)
 print selector.best_results[K]
->> {'s': array([ True,  True,  True, False, False], dtype=bool), 'cod': 0.914}
+# {'s': array([ True,  True,  True, False, False], dtype=bool), 'cod': 0.914}
 ```
 
 ## Unsupervised example
@@ -181,13 +182,11 @@ selector.position(X)
 # Take a forward sweep and print best K feature model found
 selector.search(protocol=(1, 0), steps=N-1)
 print selector.best_results[K]
->> {'s': array([ True, False,  True, False,  True], dtype=bool), 'cod': 4.89}
+# {'s': array([ True, False,  True, False,  True], dtype=bool), 'cod': 4.89}
 
 # Continue search with a reverse sweep
 selector.position(s=selector.best_results[3]['s'])
 selector.search(protocol=(N-1, N-1), steps=6*(N-1))
 print selector.best_results[K]
->> {'s': array([ True,  True, False,  True, False], dtype=bool), 'cod': 4.95}
+# {'s': array([ True,  True, False,  True, False], dtype=bool), 'cod': 4.95}
 ```
-
-
