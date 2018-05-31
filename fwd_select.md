@@ -11,9 +11,9 @@ The feature ordering and CODs are stored, allowing for review.
   were added to the predictor set during selection.
 
 #### `cod_list: list`
-    This list's index `i` specifies the COD that results if only the first `i`
-    features of `ordered_feature_list` are taken as predictors (large COD
-    values are better and a perfect score = `n_targets`).
+  This list's index `i` specifies the COD that results if only the first `i`
+  features of `ordered_feature_list` are taken as predictors (large COD
+  values are better and a perfect score = `n_targets`).
 
 ## Methods
 #### `__init__(dtype=np.float32)`
