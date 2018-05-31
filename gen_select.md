@@ -184,8 +184,8 @@ selector.search(protocol=(1, 0), steps=N-1)
 print selector.best_results[K]
 # {'s': array([ True, False,  True, False,  True], dtype=bool), 'cod': 4.89}
 
-# Continue search with a reverse sweep
-selector.position(s=selector.best_results[3]['s'])
+# Continue search with a few reverse and forward sweeps
+selector.position(s=selector.best_results[K]['s'])
 selector.search(protocol=(N-1, N-1), steps=6*(N-1))
 print selector.best_results[K]
 # {'s': array([ True,  True, False,  True, False], dtype=bool), 'cod': 4.95}
