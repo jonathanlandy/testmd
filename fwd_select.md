@@ -16,7 +16,7 @@ The feature ordering and CODs are stored, allowing for review.
     values are better and a perfect score = `n_targets`).
 
 ## Methods
-#### `__init__(dtype=np.float32)`
+#### `__init__(self, dtype=np.float32)`
 
 *Parameters*
 
@@ -27,7 +27,7 @@ The feature ordering and CODs are stored, allowing for review.
     data sets these can sometimes result in `nan` results populating the
     `cod_list`.
 
-#### `fit(X, y)`
+#### `fit(self, X, y)`
 
 Method fits passed data, evaluates `self.ordered_feature_list` and
 `self.cod_list`.
