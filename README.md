@@ -57,8 +57,8 @@ print t2 - t1
 By plotting the COD against ranked feature count, one often learns that seemingly high-dimensional
 problems can actually be understood with just a minority of the available
 features.  The plot below (taken from our tutorials) demonstrates this:
-A fit to one year of AAPL's stock fluctuations using just 3 other stocks
-as predictors nearly matches the performance of a 49-feature fit.  The 3-feature
+A fit to one year of AAPL's stock fluctuations -- using just 3 other stocks
+as predictors -- nearly matches the performance of a 49-feature fit.  The 3-feature
 fit arguably provides more insight and is certainly much easier to reason about. 
 
 
@@ -116,7 +116,7 @@ digital computers*, 1:191–203, 1960.
 [arxiv.1706.03265](https://arxiv.org/abs/1706.03265).
 
 
-## Classes, documentation, tests, licence
+## Classes, documentation, tests, license
 `linselect` contains three classes: `FwdSelect`, `RevSelect`, and `GenSelect`.
 As the names imply, these support efficient forward, reverse, and general
 forward-reverse search protocols, respectively.  Each can be used for both
