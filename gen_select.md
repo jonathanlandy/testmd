@@ -8,11 +8,11 @@ desired.
 
 ## Special Attributes
 #### `best_results: dict`
-  Keys of this dict correspond to feature subset size.  The value for a given key
-  is also a dict -- one characterizing the best subset seen so far of this size.
-  These inner dicts have two keys, `s` and `cod`.  The first holds a Boolean array
-  specifying which features were included in the subset and the second holds the
-  corresponding COD.
+  Keys of this dict correspond to feature subset size.  The value for a given
+  key is also a dict -- one characterizing the best subset seen so far of this
+  size.  These inner dicts have two keys, `s` and `cod`.  The first holds a
+  Boolean array specifying which features were included in the subset and the
+  second holds the corresponding COD.
 
 ## Methods
 #### `__init__(self, dtype=np.float32)`
@@ -34,8 +34,8 @@ Set the operating conditions of the stepwise search.
  *  `X: np.array, (n_examples, n_features)`
 
     The data set to be fit.  This must be passed in the first call to this
-    method, but should not need to be passed again in any following repositioning
-    call.  Must be numeric.
+    method, but should not need to be passed again in any following
+    repositioning call.  Must be numeric.
 
  *  `s: np.array, (n_features)`
 
@@ -45,19 +45,20 @@ Set the operating conditions of the stepwise search.
 
  *  `mobile: np.array, (n_features)`
 
-    This is a Boolean array that specifies which of the features are locked into
-    or out of our fit -- if the index `i` is set to `True`, the corresponding
-    feature `i` can be moved into or out of the predictor set.  Otherwise, the
-    feature `i` is locked in the set specified by the passed `s` argument.
+    This is a Boolean array that specifies which of the features are locked
+    into or out of our fit -- if the index `i` is set to `True`, the
+    corresponding feature `i` can be moved into or out of the predictor set.
+    Otherwise, the feature `i` is locked in the set specified by the passed `s`
+    argument.
 
 
  * `targets: np.array, (n_features)`
 
-    This is a Boolean array that specifies which of the columns of `X` are to be
-    fit -- analogs of `y` in the `FwdSelect` and `RevSelect` algorithms.  If the
-    index `i` is set to `True`, the corresponding column `i` will be placed in the
-    target set.  Once set, this should not be passed again in any following
-    repositioning call.
+    This is a Boolean array that specifies which of the columns of `X` are to
+    be fit -- analogs of `y` in the `FwdSelect` and `RevSelect` algorithms.  If
+    the index `i` is set to `True`, the corresponding column `i` will be placed
+    in the target set.  Once set, this should not be passed again in any
+    following repositioning call.
 
 #### `search(self, protocol=(2,1), steps=1)`
 
@@ -89,9 +90,9 @@ element outside of the predictor set inside.
 
   * `cod_gains : np.array (self.dimension, )`
 
-    This array's index `i` specifies the gain in target COD that would result if
-    feature `i` were to move into `s`.  Values corresponding to unavailable moves
-    are set to 0.
+    This array's index `i` specifies the gain in target COD that would result
+    if feature `i` were to move into `s`.  Values corresponding to unavailable
+    moves are set to 0.
 
 #### `reverse_cods(self)`
 
@@ -103,9 +104,9 @@ element inside of the predictor set outside.
   * `cod_costs : np.array (self.dimension, )`
 
 
-    This array's index `i` specifies the drop in target COD that would result if
-    feature `i` were to move outside of `s`.  Values corresponding to unavailable
-    moves are set to 0.
+    This array's index `i` specifies the drop in target COD that would result
+    if feature `i` were to move outside of `s`.  Values corresponding to
+    unavailable moves are set to 0.
 
 ## Supervised example
 The code below carries out a forward and a reverse sweep on a random,

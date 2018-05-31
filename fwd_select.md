@@ -42,9 +42,9 @@ Method fits passed data, evaluates `self.ordered_feature_list` and
  * `y : np.array (n_examples, n_targets)`, default `None`
   
     Array of label values for each example. If `n_targets > 1` we seek the
-    features that maximize the sum total COD over the separate labels.  If `None`
-    passed, we carry out unsupervised selection, treating all features as targets.
-    If passed, must be numeric.
+    features that maximize the sum total COD over the separate labels.  If
+    `None` passed, we carry out unsupervised selection, treating all features
+    as targets.  If passed, must be numeric.
   
 *Returns*
 

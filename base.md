@@ -18,8 +18,8 @@ This array's index `i` specifies whether variable `i` is currently in the
 predictor set.
 
 #### `mobile : np.array, Boolean (self.dimension, )`
-This array's index `i` specifies whether variable `i` is free to move in and out
-of the predictor set.
+This array's index `i` specifies whether variable `i` is free to move in and
+out of the predictor set.
 
 #### `targets : np.array, Boolean (self.dimension, )`
 This array's index `i` specifies whether variable `i` is in the target set,
