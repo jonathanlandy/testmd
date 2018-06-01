@@ -56,11 +56,11 @@ print t2 - t1
 ### Its scores reveal your effective feature count
 By plotting fitted CODs against ranked feature count, one often learns that
 seemingly high-dimensional problems can actually be understood using only a
-minority of the available features.  The plot below (taken from our tutorials)
-demonstrates this: A fit to one year of AAPL's stock fluctuations -- using just 3
+minority of the available features.  The plot below demonstrates this: A fit to one year of AAPL's stock fluctuations -- using just 3
 other stocks as predictors -- nearly matches the performance of a 49-feature fit.
 The 3-feature fit arguably provides more insight and is certainly easier to
-reason about. 
+reason about (cf. tutorials for details).
+ 
 
 
 ![apple stock plot](./docs/apple.png)
