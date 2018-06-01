@@ -5,6 +5,12 @@ feature selection package for python
 
 
 ## Package in a nutshell 
+### It's an implementation of stepwise linear regression 
+The package allows one to seek minimal feature / column subsets of a given
+data set that provide a good fit to a target variable.  It can do this quickly
+and with good memory efficiency.
+
+
 ### It has a simple API
 A simple API makes it easy to quickly rank a data set's features in terms of
 their added value to a given fit.  This is demoed below, where we learn that we
