@@ -5,11 +5,10 @@ feature selection package for python
 
 
 ## Package in a nutshell 
-### It's an implementation of stepwise linear regression 
-The package allows one to seek minimal feature / column subsets of a given
-data set that provide a good fit to a target variable.  It can do this quickly
-and with good memory efficiency.
-
+`linselect` is based on the stepwise linear regression algorithm.  This is an
+algorithm that allows one to seek minimal feature / column subsets of a given
+data set that provide good linear fits to a set of target variables.  This
+approach has a number of virtues, listed below:
 
 ### It has a simple API
 A simple API makes it easy to quickly rank a data set's features in terms of
