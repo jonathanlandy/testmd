@@ -1,15 +1,14 @@
 # `linselect` 
 
-A fast, flexible, and performant
-feature selection package for python.
+A fast, flexible, and performant feature selection package for python.
 
 
 ## Package in a nutshell 
 ### It's built on stepwise linear regression
-The underlying algorithm is designed to seek minimal feature
-subsets that produce good linear fits to a
-set of target variables.  This approach to feature selection strikes
-a good balance between performance, speed, and memory efficiency.
+The underlying algorithm is designed to seek minimal feature subsets that
+produce good linear fits to a set of target variables.  This approach to
+feature selection strikes a good balance between performance, speed, and memory
+efficiency.
 
 ### It has a simple API
 A simple API makes it easy to quickly rank a data set's features in terms of
@@ -79,9 +78,8 @@ allow for:
 * Supervised applications aimed at a single target variable or simultaneous
   prediction of multiple target variables.
 * Unsupervised applications.  The algorithm can be applied to identify minimal,
-  representative subsets of an available column set.  This solution provides a
-  feature selection analog of PCA -- importantly, one that retains
-  interpretability.
+  representative subsets of an available column set.  This provides a feature
+  selection analog of PCA -- importantly, one that retains interpretability.
 
 
 
