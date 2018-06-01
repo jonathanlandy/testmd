@@ -1,15 +1,10 @@
 # `linselect` 
 
-A fast, flexible, and performant feature selection package for python --
-built on stepwise linear regression
+*Efficient linear stepwise regression* -- a fast, flexible, and performant
+feature selection package for python.
 
 
 ## Package in a nutshell 
-`linselect` is based on the stepwise linear regression algorithm.  This is an
-algorithm that allows one to seek minimal feature / column subsets of a given
-data set that provide good linear fits to a set of target variables.  This
-approach has a number of virtues, listed below:
-
 ### It has a simple API
 A simple API makes it easy to quickly rank a data set's features in terms of
 their added value to a given fit.  This is demoed below, where we learn that we
@@ -60,7 +55,7 @@ print t2 - t1
 
 ### Its scores reveal your effective feature count
 By plotting fitted CODs against ranked feature count, one often learns that
-seemingly high-dimensional problems can be well understood using only a
+seemingly high-dimensional problems can actually be understood with just a
 minority of the available features.  The plot below (taken from our tutorials)
 demonstrates this: A fit to one year of AAPL's stock fluctuations using just 3
 other stocks as predictors nearly matches the performance of a 49-feature fit.
