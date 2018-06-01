@@ -5,9 +5,9 @@ A fast, flexible, and performant feature selection package for python.
 
 ## Package in a nutshell 
 ### It's built on stepwise linear regression
-When passed a data set, the underlying algorithm seeks minimal variable subsets
-that produce good linear fits to the targets.  This approach to feature
-selection strikes a competitive balance between performance, speed, and memory
+When passed data, the underlying algorithm seeks minimal variable subsets that
+produce good linear fits to the targets.  This approach to feature selection
+strikes a competitive balance between performance, speed, and memory
 efficiency.
 
 ### It has a simple API
