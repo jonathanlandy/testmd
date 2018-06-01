@@ -55,7 +55,7 @@ print t2 - t1
 
 ### Its scores reveal your effective feature count
 By plotting fitted CODs against ranked feature count, one often learns that
-seemingly high-dimensional problems can actually be understood with just a
+seemingly high-dimensional problems can be well understood using only a
 minority of the available features.  The plot below (taken from our tutorials)
 demonstrates this: A fit to one year of AAPL's stock fluctuations using just 3
 other stocks as predictors nearly matches the performance of a 49-feature fit.
