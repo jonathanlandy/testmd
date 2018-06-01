@@ -143,7 +143,7 @@ python setup.py test
 This project is licensed under the terms of the MIT license.
 
 ## Installation 
-The package can be installed using pip, either from pypi
+The package can be installed using pip, from pypi
 
 ```
 pip install linselect
