@@ -6,7 +6,7 @@ feature selection package for python.
 
 ## Package in a nutshell 
 ### It's built on stepwise linear regression
-Stepwise linear regression is an algorithm that allows one to identify minimal feature / column
+The underlying algorithm allows one to identify minimal feature / column
 subsets of a given data set that produce good linear fits to a
 set of target variables.  This solution strikes a good balance between performance, speed, and memory efficiency.
 
