@@ -6,10 +6,10 @@ feature selection package for python.
 
 ## Package in a nutshell 
 ### It has a simple API
-A simple API makes it easy to quickly rank a data set's features
-in terms of their added value to a given fit.  This is demoed below, 
-where we learn that we can drop column `1` of `X` and
-still obtain a fit to `y` that captures 97.37% of its variance.
+A simple API makes it easy to quickly rank a data set's features in terms of
+their added value to a given fit.  This is demoed below, where we learn that we
+can drop column `1` of `X` and still obtain a fit to `y` that captures 97.37%
+of its variance.
 
 
 ```python
@@ -32,9 +32,9 @@ X_compressed = X[:, selector.ordered_feature_list[:2]]
 
 ### It's fast 
 A full sweep on a 1000 feature count data set runs in 10s on my laptop -- about
-**one million times faster** (seriously) than standard stepwise algorithms, which are
-effectively too slow to run at this scale.  A 100 count feature set runs in
-0.07s.
+**one million times faster** (seriously) than standard stepwise algorithms,
+which are effectively too slow to run at this scale.  A 100 count feature set
+runs in 0.07s.
 
 ```python
 from linselect import FwdSelect
@@ -53,13 +53,14 @@ print t2 - t1
 # 9.87492 
 ``` 
 
-### Its stored scores reveal your effective feature count
-By plotting the COD against ranked feature count, one often learns that seemingly high-dimensional
-problems can actually be understood with just a minority of the available
-features.  The plot below (taken from our tutorials) demonstrates this:
-A fit to one year of AAPL's stock fluctuations -- using just 3 other stocks
-as predictors -- nearly matches the performance of a 49-feature fit.  The 3-feature
-fit arguably provides more insight and is certainly much easier to reason about. 
+### Its scores reveal your effective feature count
+By plotting fitted CODs against ranked feature count, one often learns that
+seemingly high-dimensional problems can actually be understood with just a
+minority of the available features.  The plot below (taken from our tutorials)
+demonstrates this: A fit to one year of AAPL's stock fluctuations using just 3
+other stocks as predictors nearly matches the performance of a 49-feature fit.
+The 3-feature fit arguably provides more insight and is certainly much easier
+to reason about. 
 
 
 ![apple stock plot](./docs/apple.png)
@@ -71,9 +72,10 @@ allow for:
 * Forward, reverse, and general forward-reverse stepwise regression strategies.
 * Supervised applications aimed at a single target variable or simultaneous
   prediction of multiple target variables.
-* Unsupervised applications.  The algorithm can be applied to identify minimal, representative
-  subsets of an available column set.  This solution provides a feature
-  selection analog of PCA -- importantly, one that retains interpretability.
+* Unsupervised applications.  The algorithm can be applied to identify minimal,
+  representative subsets of an available column set.  This solution provides a
+  feature selection analog of PCA -- importantly, one that retains
+  interpretability.
 
 
 
@@ -90,7 +92,7 @@ considers all of the features that have not yet been added to the model, and
 then identifies that which would improve the model the most.  This is added,
 and the process is then repeated until all features have been selected.  The
 features that are added first in this way tend to be those that are predictive
-and also not redundant with those already included in the feature set.
+and also not redundant with those already included in the predictor set.
 Retaining only these first selected features therefore provides a convenient
 method for identifying minimal, informative feature subsets.
 
