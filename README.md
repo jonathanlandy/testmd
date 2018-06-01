@@ -131,7 +131,7 @@ supervised and unsupervised analyses.
 Docstrings and basic call examples are illustrated for each class in the
 [./docs](docs/) folder.
 
-An FAQ and a running list of tutorials are also available at
+An FAQ and a running list of tutorials are available at
 [efavdb.com/linselect](http://www.efavdb.com/linselect).
 
 Tests: From the root directory,
