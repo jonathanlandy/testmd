@@ -6,9 +6,10 @@ feature selection package for python.
 
 ## Package in a nutshell 
 ### It's built on stepwise linear regression
-The underlying algorithm allows one to identify minimal feature / column
-subsets of a given data set that produce good linear fits to a
-set of target variables.  This solution strikes a good balance between performance, speed, and memory efficiency.
+The underlying algorithm is designed to seek the minimal feature
+subsets within a given data set that produce good linear fits to a
+set of target variables.  This approach to feature selection strikes
+a good balance between performance, speed, and memory efficiency.
 
 ### It has a simple API
 A simple API makes it easy to quickly rank a data set's features in terms of
