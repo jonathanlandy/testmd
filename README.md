@@ -1,10 +1,16 @@
 # `linselect` 
 
-*Efficient linear stepwise regression* -- a fast, flexible, and performant
+A fast, flexible, and performant
 feature selection package for python.
 
 
 ## Package in a nutshell 
+### It's built on stepwise linear regression
+Stepwise linear regression is an algorithm that allows one to identify minimal feature / column
+subsets of a given data set that produce good linear fits to a
+set of target variables.  This approach to feature selection strikes a good balance
+between accuracy, speed, and memory efficiency.
+
 ### It has a simple API
 A simple API makes it easy to quickly rank a data set's features in terms of
 their added value to a given fit.  This is demoed below, where we learn that we
