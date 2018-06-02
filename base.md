@@ -23,7 +23,7 @@ out of the predictor set.
 
 #### `targets : np.array, Boolean (self.dimension, )`
 This array's index `i` specifies whether variable `i` is in the target set,
-i.e., it is one of the variables we are trying to fit.
+i.e., one of the variables we are trying to fit.
 
 #### `dimension : int`
 This is the number of variables, including both the features in `X` and the
@@ -33,4 +33,4 @@ targets in `y` (when passed).
 Computations will be carried out using this level of precision.  Note: Lower
 precision types result in faster computation. However, for nearly redundant
 data sets these can sometimes result in `nan` results populating the
-`cod_list`.
+`ordered_cods`.

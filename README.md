@@ -27,12 +27,12 @@ y = np.array([[1], [-1], [-1], [1]])
 selector = FwdSelect()
 selector.fit(X, y)
 
-print selector.ordered_feature_list
-print selector.cod_list
+print selector.ordered_features
+print selector.ordered_cods
 # [2, 0, 1] 
 # [0.47368422, 0.97368419, 1.0]
 
-X_compressed = X[:, selector.ordered_feature_list[:2]]
+X_compressed = X[:, selector.ordered_features[:2]]
 ```
 
 ### It's fast 

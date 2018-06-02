@@ -6,13 +6,13 @@ the total COD (coefficient of determination, aka R^2) by the largest amount.
 The feature ordering and CODs are stored, allowing for review.
 
 ## Special Attributes
-#### `ordered_feature_list: list`
+#### `ordered_features: list`
   List of the feature indices.  The ordering is that in which the features
   were added to the predictor set during selection.
 
-#### `cod_list: list`
+#### `ordered_cods: list`
   This list's index `i` specifies the COD that results if only the first `i`
-  features of `ordered_feature_list` are taken as predictors (large COD
+  features of `ordered_features` are taken as predictors (large COD
   values are better and a perfect score = `n_targets`).
 
 ## Methods
@@ -25,12 +25,12 @@ The feature ordering and CODs are stored, allowing for review.
     Computations will be carried out using this level of precision. Note: Lower
     precision types result in faster computation. However, for nearly redundant
     data sets these can sometimes result in `nan` results populating the
-    `cod_list`.
+    `ordered_cods`.
 
 #### `fit(self, X, y)`
 
-Method fits passed data, evaluates `self.ordered_feature_list` and
-`self.cod_list`.
+Method fits passed data, evaluates `self.ordered_features` and
+`self.ordered_cods`.
   
 *Parameters*
 
@@ -54,8 +54,8 @@ Method fits passed data, evaluates `self.ordered_feature_list` and
 The code below carries out a forward stepwise selection procedure on a
 supervised example:  We construct a random `X` array and then define a `y`
 array that is a specified linear combination of the columns of `X`.  Passing
-these to a `FwdSelect` instance's `fit` method, the `ordered_feature_list` and
-`cod_list` are then evaluated and stored.
+these to a `FwdSelect` instance's `fit` method, the `ordered_features` and
+`ordered_cods` are then evaluated and stored.
 
 ```python
 import numpy as np
@@ -72,17 +72,17 @@ selector = FwdSelect()
 selector.fit(X, y)
 
 # Get the ordered features and COD lists
-print selector.ordered_feature_list
+print selector.ordered_features
 # [3, 2, 1, 0]
 
-print selector.cod_list
+print selector.ordered_cods
 # [0.64, 0.93, 1.00, 1.00]
 ```
 
 ## Unsupervised example
 The code below carries out a forward stepwise selection procedure on an
 unsupervised example:  We construct a random `X` array and then pass this to a
-`FwdSelect` instance's `fit` method, the `ordered_feature_list` and `cod_list`
+`FwdSelect` instance's `fit` method, the `ordered_features` and `ordered_cods`
 are then evaluated and stored.  Note that to generate this example, we use
 numpy's `multivariate_normal` sampler, after first generating a random,
 non-negative definite covariance matrix.  Apparently, the zeroth feature in
@@ -107,9 +107,9 @@ selector = FwdSelect()
 selector.fit(X)
 
 # Get the ordered features and COD lists
-print selector.ordered_feature_list
+print selector.ordered_features
 # [0, 3, 1, 2] 
 
-print selector.cod_list
+print selector.ordered_cods
 # [2.76, 3.54, 3.99, 4.00]
 ```

@@ -23,7 +23,7 @@ desired.
     Computations will be carried out using this level of precision. Note: Lower
     precision types result in faster computation. However, for nearly redundant
     data sets these can sometimes result in nan results populating the
-    `cod_list`.
+    `ordered_cods`.
 
 #### `position(self, X=None, s=None, mobile=None, targets=None)`
 
